@@ -79,20 +79,22 @@ export default function HeroCarousel({ movies }: HeroCarouselProps) {
           <div
             key={movie.id}
             className={cn(
-              "absolute inset-0 transition-opacity duration-700",
+              "absolute inset-0 overflow-hidden transition-opacity duration-700",
               slideIndex === index ? "opacity-100" : "pointer-events-none opacity-0"
             )}
             aria-hidden={slideIndex !== index}
           >
-            <ImageWithFallback
-              src={movie.posterUrl}
-              alt=""
-              fill
-              priority={slideIndex === 0}
-              quality={85}
-              sizes="100vw"
-              className="scale-125 object-cover object-[center_20%] blur-2xl brightness-50 saturate-125"
-            />
+            <div className="absolute -inset-16 sm:-inset-24">
+              <ImageWithFallback
+                src={movie.posterUrl}
+                alt=""
+                fill
+                priority={slideIndex === 0}
+                quality={85}
+                sizes="140vw"
+                className="object-cover object-[center_18%] blur-xl brightness-[0.55] saturate-125"
+              />
+            </div>
             <div className="cinema-gradient absolute inset-0" />
             <div className="cinema-gradient-side absolute inset-0 hidden md:block" />
           </div>
