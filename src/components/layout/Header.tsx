@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import Logo from "@/components/cinema/Logo";
 import { cinemaInfo, fullAddress } from "@/data/cinema";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { useTicketPurchase } from "@/components/providers/TicketProvider";
 import { cn } from "@/lib/utils";
 
@@ -61,7 +60,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-md">
-      <div className="container-cine flex h-16 items-center justify-between gap-4 lg:h-18">
+      <div className="container-cine flex h-14 items-center justify-between gap-3 lg:h-18">
         <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Principal">
@@ -131,7 +130,7 @@ export default function Header() {
 
           <button
             type="button"
-            className="inline-flex h-11 items-center justify-center rounded-xl bg-primary px-3 text-sm font-semibold text-white hover:bg-primary-hover sm:px-4"
+            className="inline-flex h-8 items-center justify-center rounded-lg bg-primary px-2.5 text-xs font-semibold text-white hover:bg-primary-hover sm:h-10 sm:rounded-xl sm:px-4 sm:text-sm lg:h-11"
             onClick={() => openPurchase()}
           >
             <span className="sm:hidden">Ingressos</span>
@@ -140,13 +139,13 @@ export default function Header() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-surface text-foreground lg:hidden"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-foreground sm:h-10 sm:w-10 lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
             onClick={() => setMenuOpen((value) => !value)}
           >
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
         </div>
       </div>
@@ -156,35 +155,23 @@ export default function Header() {
           id="mobile-menu"
           className="border-t border-border bg-background lg:hidden"
         >
-          <nav className="container-cine flex flex-col gap-1 py-4" aria-label="Mobile">
+          <nav className="container-cine flex flex-col gap-0.5 py-3" aria-label="Mobile">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
-                className="rounded-xl px-3 py-3 text-base font-medium text-foreground hover:bg-surface"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-surface"
               >
                 {link.label}
               </Link>
             ))}
             <a
-              href={buildWhatsAppUrl(
-                cinemaInfo.whatsapp,
-                "Olá! Gostaria de informações sobre o Cineplaza."
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
-              className="rounded-xl px-3 py-3 text-base font-medium text-foreground hover:bg-surface"
-            >
-              Falar no WhatsApp
-            </a>
-            <a
               href={cinemaInfo.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="rounded-xl px-3 py-3 text-base font-medium text-foreground hover:bg-surface"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-surface"
             >
               Como chegar
             </a>

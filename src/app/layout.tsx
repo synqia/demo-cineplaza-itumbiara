@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Manrope } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Analytics from "@/components/Analytics";
 import JsonLdOrganization from "@/components/seo/JsonLdOrganization";
 import { cinemaInfo } from "@/data/cinema";
@@ -90,7 +89,6 @@ export default function RootLayout({
         <Analytics />
         {children}
         <CookieConsent />
-        <FloatingWhatsApp />
         <DisclaimerBanner />
       </body>
     </html>

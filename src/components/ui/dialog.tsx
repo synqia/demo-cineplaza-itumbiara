@@ -34,7 +34,7 @@ const DialogViewport = React.forwardRef<
   <DialogPrimitive.Viewport
     ref={ref}
     className={cn(
-      "fixed left-1/2 top-1/2 z-50 flex max-h-[85vh] w-full max-w-140 -translate-x-1/2 -translate-y-1/2 justify-center p-4",
+      "fixed left-1/2 top-1/2 z-50 flex max-h-[min(88dvh,100%)] w-[calc(100%-1.5rem)] max-w-140 -translate-x-1/2 -translate-y-1/2 justify-center p-0 sm:w-full sm:p-4",
       className
     )}
     {...props}
@@ -49,7 +49,7 @@ const DialogPopup = React.forwardRef<
   <DialogPrimitive.Popup
     ref={ref}
     className={cn(
-      "relative z-50 w-full overflow-y-auto rounded-xl border border-border-default bg-bg-base p-6 shadow-xl",
+      "relative z-50 w-full overflow-y-auto rounded-xl border border-border-default bg-bg-base p-4 shadow-xl sm:p-6",
       "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
       className
     )}

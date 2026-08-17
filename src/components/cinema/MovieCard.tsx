@@ -24,7 +24,7 @@ export default function MovieCard({
   return (
     <article
       className={cn(
-        "group relative flex w-42 shrink-0 flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-transform duration-300 sm:w-auto",
+        "group relative flex h-full w-full shrink-0 flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-transform duration-300",
         "hover:-translate-y-1 hover:border-primary/40 hover:shadow-(--shadow-card-hover)",
         className
       )}
@@ -38,7 +38,8 @@ export default function MovieCard({
           alt={`Pôster do filme ${movie.title}`}
           fill
           sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 200px"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+          quality={90}
           priority={priority}
         />
         <div className="absolute left-2 top-2 flex flex-wrap gap-1.5">
@@ -59,7 +60,7 @@ export default function MovieCard({
       </Link>
 
       <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
-        <h3 className="font-heading text-base font-semibold leading-tight text-foreground line-clamp-2">
+        <h3 className="min-h-10 font-heading text-base font-semibold leading-tight text-foreground line-clamp-2">
           <Link href={`/filmes/${movie.slug}`} className="hover:text-primary">
             {movie.title}
           </Link>
@@ -68,10 +69,12 @@ export default function MovieCard({
           {movie.genre[0]} · {formatDuration(movie.duration)}
         </p>
         {languageHint ? (
-          <p className="text-[11px] uppercase tracking-wide text-text-faint">
+          <p className="min-h-4 text-[11px] uppercase tracking-wide text-text-faint">
             {languageHint}
           </p>
-        ) : null}
+        ) : (
+          <p className="min-h-4" aria-hidden />
+        )}
 
         <div className="mt-auto flex flex-col gap-2 pt-2 opacity-100 sm:opacity-95 sm:group-hover:opacity-100">
           {onBuyTickets &&

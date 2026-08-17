@@ -37,26 +37,14 @@ type SessionTemplate = {
 };
 
 const templates: SessionTemplate[] = [
-  { movieId: "m1", time: "14:30", room: "Sala 3", format: "2D", language: "Dublado", price: 32, accessibility: true },
-  { movieId: "m1", time: "17:10", room: "Sala 1", format: "Premium", language: "Legendado", price: 42 },
-  { movieId: "m1", time: "20:00", room: "Sala 3", format: "2D", language: "Dublado", price: 34 },
-  { movieId: "m2", time: "15:00", room: "Sala 2", format: "3D", language: "Dublado", price: 38 },
-  { movieId: "m2", time: "18:20", room: "Sala 2", format: "2D", language: "Dublado", price: 32, accessibility: true },
-  { movieId: "m2", time: "21:15", room: "Sala 3", format: "2D", language: "Dublado", price: 30 },
-  { movieId: "m3", time: "13:40", room: "Sala 3", format: "2D", language: "Dublado", price: 28, accessibility: true },
-  { movieId: "m3", time: "16:20", room: "Sala 3", format: "2D", language: "Legendado", price: 28 },
-  { movieId: "m4", time: "16:50", room: "Sala 1", format: "Premium", language: "Legendado", price: 44 },
-  { movieId: "m4", time: "19:40", room: "Sala 3", format: "2D", language: "Legendado", price: 34 },
-  { movieId: "m4", time: "22:10", room: "Sala 1", format: "Premium", language: "Legendado", price: 44 },
-  { movieId: "m5", time: "14:00", room: "Sala 3", format: "2D", language: "Dublado", price: 28 },
-  { movieId: "m5", time: "19:00", room: "Sala 3", format: "2D", language: "Dublado", price: 32, accessibility: true },
-  { movieId: "m6", time: "15:30", room: "Sala 2", format: "3D", language: "Dublado", price: 40 },
-  { movieId: "m6", time: "18:40", room: "Sala 1", format: "Premium", language: "Legendado", price: 46 },
-  { movieId: "m6", time: "21:40", room: "Sala 2", format: "2D", language: "Dublado", price: 34 },
-  { movieId: "m7", time: "17:00", room: "Sala 2", format: "3D", language: "Dublado", price: 40, dayOffset: [3, 4, 5, 6] },
-  { movieId: "m7", time: "20:30", room: "Sala 1", format: "2D", language: "Legendado", price: 36, dayOffset: [3, 4, 5, 6] },
-  { movieId: "m8", time: "16:10", room: "Sala 3", format: "2D", language: "Dublado", price: 32, dayOffset: [5, 6] },
-  { movieId: "m8", time: "19:20", room: "Sala 1", format: "Premium", language: "Dublado", price: 42, dayOffset: [5, 6] },
+  { movieId: "m1", time: "15:00", room: "Sala 1", format: "2D", language: "Dublado", price: 30, accessibility: true },
+  { movieId: "m1", time: "19:00", room: "Sala 1", format: "2D", language: "Dublado", price: 30 },
+  { movieId: "m1", time: "21:30", room: "Sala 1", format: "2D", language: "Dublado", price: 30 },
+  { movieId: "m2", time: "15:00", room: "Sala 2", format: "2D", language: "Dublado", price: 30, accessibility: true },
+  { movieId: "m2", time: "19:00", room: "Sala 2", format: "2D", language: "Dublado", price: 30 },
+  { movieId: "m3", time: "15:00", room: "Sala 3", format: "2D", language: "Dublado", price: 30, accessibility: true },
+  { movieId: "m3", time: "19:00", room: "Sala 3", format: "2D", language: "Dublado", price: 30 },
+  { movieId: "m3", time: "21:30", room: "Sala 3", format: "2D", language: "Dublado", price: 30 },
 ];
 
 function resolveStatus(

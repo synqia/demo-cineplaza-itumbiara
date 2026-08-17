@@ -124,32 +124,32 @@ export default function TicketPurchaseDialog({
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogPortal>
         <DialogBackdrop />
-        <DialogViewport className="max-w-160">
-          <DialogPopup className="max-h-[85vh] border-border bg-surface text-foreground">
-            <div className="flex items-start justify-between gap-4">
+        <DialogViewport className="max-w-lg sm:max-w-160">
+          <DialogPopup className="max-h-[min(88dvh,100%)] border-border bg-surface p-4 text-foreground sm:max-h-[85vh] sm:p-6">
+            <div className="flex items-start justify-between gap-3">
               <div>
-                <DialogTitle className="text-foreground">
+                <DialogTitle className="text-base text-foreground sm:text-lg">
                   {step === "done" ? "Protótipo" : "Comprar ingressos"}
                 </DialogTitle>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p className="mt-0.5 text-xs text-muted-foreground sm:mt-1 sm:text-sm">
                   {movie?.title ?? "Selecione filme e sessão"}
                 </p>
               </div>
               <DialogClose
-                className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground"
+                className="rounded-lg p-1 text-muted-foreground hover:bg-muted hover:text-foreground"
                 aria-label="Fechar"
               >
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4 sm:h-5 sm:w-5" />
               </DialogClose>
             </div>
 
-            <div className="mt-6 space-y-6">
+            <div className="mt-4 space-y-4 sm:mt-6 sm:space-y-6">
               {step === "movie" ? (
                 <div className="space-y-2">
                   <p className="text-sm text-muted-foreground">
                     Escolha o filme para continuar.
                   </p>
-                  <div className="max-h-72 space-y-2 overflow-y-auto pr-1">
+                  <div className="max-h-56 space-y-2 overflow-y-auto pr-1 sm:max-h-72">
                     {(purchasableMovies.length
                       ? purchasableMovies
                       : getNowShowingMovies()
@@ -157,7 +157,7 @@ export default function TicketPurchaseDialog({
                       <button
                         key={item.id}
                         type="button"
-                        className="flex w-full items-center justify-between rounded-xl border border-border bg-surface-elevated px-4 py-3 text-left hover:border-primary"
+                        className="flex w-full items-center justify-between rounded-lg border border-border bg-surface-elevated px-3 py-2.5 text-left text-sm hover:border-primary sm:rounded-xl sm:px-4 sm:py-3"
                         onClick={() => {
                           setSelectedMovieId(item.id);
                           setSelectedSessionId("");
@@ -167,9 +167,9 @@ export default function TicketPurchaseDialog({
                         <span className="font-medium text-foreground">
                           {item.title}
                         </span>
-                        <span className="text-xs uppercase tracking-wide text-muted-foreground">
+                        {/* <span className="text-xs uppercase tracking-wide text-muted-foreground">
                           {item.status === "pre-sale" ? "Pré-venda" : "Em cartaz"}
-                        </span>
+                        </span> */}
                       </button>
                     ))}
                   </div>
@@ -222,31 +222,31 @@ export default function TicketPurchaseDialog({
                       (type) => (
                         <div
                           key={type}
-                          className="flex items-center justify-between rounded-xl border border-border bg-surface-elevated px-4 py-3"
+                          className="flex items-center justify-between rounded-lg border border-border bg-surface-elevated px-3 py-2.5 sm:rounded-xl sm:px-4 sm:py-3"
                         >
                           <div>
-                            <p className="font-medium text-foreground">
+                            <p className="text-sm font-medium text-foreground">
                               {ticketTypeLabels[type]}
                             </p>
-                            <p className="text-sm text-muted-foreground">
+                            <p className="text-xs text-muted-foreground sm:text-sm">
                               {formatPrice(ticketPrices[type])}
                             </p>
                           </div>
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-2 sm:gap-3">
                             <button
                               type="button"
-                              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border"
+                              className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border sm:h-10 sm:w-10"
                               aria-label={`Diminuir ${ticketTypeLabels[type]}`}
                               onClick={() => updateQuantity(type, -1)}
                             >
                               <Minus className="h-4 w-4" />
                             </button>
-                            <span className="w-6 text-center font-heading text-lg">
+                            <span className="w-5 text-center font-heading text-base sm:w-6 sm:text-lg">
                               {quantities[type]}
                             </span>
                             <button
                               type="button"
-                              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border"
+                              className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border sm:h-10 sm:w-10"
                               aria-label={`Aumentar ${ticketTypeLabels[type]}`}
                               onClick={() => updateQuantity(type, 1)}
                             >
@@ -265,7 +265,7 @@ export default function TicketPurchaseDialog({
                   </div>
                   <Button
                     type="button"
-                    className="h-11 w-full bg-primary hover:bg-primary-hover"
+                    className="h-10 w-full bg-primary hover:bg-primary-hover sm:h-11"
                     disabled={totals.count === 0}
                     onClick={() => setStep("summary")}
                   >
@@ -320,14 +320,14 @@ export default function TicketPurchaseDialog({
                     <Button
                       type="button"
                       variant="outline"
-                      className="h-11 flex-1"
+                      className="h-10 flex-1 sm:h-11"
                       onClick={() => setStep("tickets")}
                     >
                       Voltar
                     </Button>
                     <Button
                       type="button"
-                      className="h-11 flex-1 bg-primary hover:bg-primary-hover"
+                      className="h-10 flex-1 bg-primary hover:bg-primary-hover sm:h-11"
                       onClick={() => setStep("done")}
                     >
                       Continuar para pagamento
@@ -347,7 +347,7 @@ export default function TicketPurchaseDialog({
                   </p>
                   <Button
                     type="button"
-                    className="mt-5 h-11 w-full"
+                    className="mt-4 h-10 w-full sm:mt-5 sm:h-11"
                     onClick={() => handleClose(false)}
                   >
                     Entendi

@@ -42,7 +42,7 @@ export default function DateSelector({
             aria-selected={isSelected}
             onClick={() => onChange(date)}
             className={cn(
-              "flex min-w-19 shrink-0 flex-col items-center rounded-2xl border px-3 py-3 transition-colors",
+              "flex min-w-16 shrink-0 flex-col items-center rounded-xl border px-2.5 py-2 transition-colors sm:min-w-19 sm:rounded-2xl sm:px-3 sm:py-3",
               isSelected
                 ? "border-primary bg-primary text-white"
                 : "border-border bg-surface text-foreground hover:border-primary/50 hover:bg-surface-elevated"
@@ -51,7 +51,7 @@ export default function DateSelector({
             <span className="text-[10px] font-semibold uppercase tracking-wide opacity-80">
               {badge ?? label.weekday}
             </span>
-            <span className="font-heading text-xl font-bold leading-none">
+            <span className="font-heading text-lg font-bold leading-none sm:text-xl">
               {label.day}
             </span>
             <span className="text-[11px] capitalize opacity-80">{label.month}</span>

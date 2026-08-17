@@ -29,7 +29,7 @@ export default function MobileNavigation() {
       className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden"
       aria-label="Navegação rápida"
     >
-      <ul className="grid grid-cols-5 gap-1 px-2 py-2">
+      <ul className="grid grid-cols-5 px-1 py-1">
         {items.map((item) => {
           const Icon = item.icon;
           const active =
@@ -45,11 +45,11 @@ export default function MobileNavigation() {
                 <button
                   type="button"
                   onClick={() => openPurchase()}
-                  className="-mt-3 flex min-h-14 min-w-14 flex-col items-center justify-center rounded-2xl bg-primary px-2 text-white shadow-lg shadow-primary/30"
+                  className="flex h-10 min-w-10 flex-col items-center justify-center rounded-xl bg-primary px-1.5 text-white"
                   aria-label="Comprar ingressos"
                 >
-                  <Icon className="h-5 w-5" aria-hidden />
-                  <span className="mt-0.5 text-[10px] font-semibold">
+                  <Icon className="h-3.5 w-3.5" aria-hidden />
+                  <span className="mt-0.5 text-[9px] font-semibold leading-none">
                     {item.label}
                   </span>
                 </button>
@@ -62,11 +62,11 @@ export default function MobileNavigation() {
               <Link
                 href={item.href}
                 className={cn(
-                  "flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-xl px-1 text-[10px] font-medium",
+                  "flex h-10 flex-col items-center justify-center gap-0.5 rounded-lg px-1 text-[9px] font-medium leading-none",
                   active ? "text-primary" : "text-muted-foreground"
                 )}
               >
-                <Icon className="h-5 w-5" aria-hidden />
+                <Icon className="h-3.5 w-3.5" aria-hidden />
                 {item.label}
               </Link>
             </li>

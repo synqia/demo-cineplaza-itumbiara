@@ -91,9 +91,9 @@ export const cinemaInfo: CinemaInfo = {
 };
 
 export const ticketPrices = {
-  full: 36,
-  half: 18,
-  promo: 22,
+  full: 30,
+  half: 15,
+  promo: 15,
   serviceFee: 3,
 } as const;
 

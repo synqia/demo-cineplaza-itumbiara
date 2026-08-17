@@ -58,6 +58,7 @@ export default function HomePage() {
 
       <PromoBanner />
 
+      {comingSoon.length > 0 ? (
       <section className="section-padding pt-0">
         <div className="container-cine">
           <SectionHeader
@@ -124,6 +125,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      ) : null}
 
       <ExperienceCards experiences={cinemaInfo.experiences} />
 

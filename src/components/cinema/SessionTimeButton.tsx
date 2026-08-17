@@ -36,7 +36,7 @@ export default function SessionTimeButton({
         session.accessibility ? ", com acessibilidade" : ""
       }`}
       className={cn(
-        "inline-flex min-h-11 min-w-22 flex-col items-center justify-center gap-0.5 rounded-xl border px-3 py-2 text-sm transition-colors",
+        "inline-flex min-h-9 min-w-18 flex-col items-center justify-center gap-0.5 rounded-lg border px-2.5 py-1.5 text-xs transition-colors sm:min-h-11 sm:min-w-22 sm:rounded-xl sm:px-3 sm:py-2 sm:text-sm",
         session.status === "available" &&
           "border-border bg-surface-elevated text-foreground hover:border-primary hover:bg-primary/10",
         session.status === "few-seats" &&

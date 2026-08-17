@@ -2,18 +2,18 @@ import type { Promotion } from "@/types/cinema";
 
 export const promotions: Promotion[] = [
   {
-    id: "promo-terca",
-    title: "Terça Cineplaza",
-    subtitle: "Ingressos promocionais durante todo o dia",
+    id: "promo-quarta",
+    title: "Quarta Cineplaza",
+    subtitle: "Ingresso pela metade do preço",
     description:
-      "Cinema combina ainda mais com preço especial. Consulte os filmes e sessões participantes.",
+      "Todas as quartas-feiras o ingresso sai pela metade do preço. Válido para as sessões do dia, enquanto houver lugares.",
     ctaLabel: "Ver programação",
-    ctaHref: "/programacao?promo=terca",
+    ctaHref: "/programacao",
   },
 ];
 
 export const promoBarCopy = {
-  text: "Terça Cineplaza: ingressos promocionais durante todo o dia.",
-  linkLabel: "Ver condições",
-  linkHref: "/programacao?promo=terca",
+  text: "Todas as quartas-feiras o ingresso é pela metade do preço.",
+  linkLabel: "Ver programação",
+  linkHref: "/programacao",
 };

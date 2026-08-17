@@ -39,7 +39,7 @@ export const sessionStatusCopy: Record<
 export const ticketTypeLabels: Record<TicketType, string> = {
   full: "Inteira",
   half: "Meia-entrada",
-  promo: "Promocional",
+  promo: "Quarta promocional",
 };
 
 export function calculateTicketTotal(

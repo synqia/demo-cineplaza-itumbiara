@@ -48,15 +48,14 @@ export default function MovieCarousel({
 
       <div
         ref={scrollerRef}
-        className="grid auto-cols-42 grid-flow-col gap-3 overflow-x-auto pb-2 snap-x snap-mandatory sm:auto-cols-45 md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:overflow-visible lg:grid-cols-4 xl:grid-cols-5"
+        className="grid auto-cols-[11rem] grid-flow-col gap-3 overflow-x-auto pb-2 snap-x snap-mandatory sm:auto-cols-[13rem] md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:overflow-visible md:pb-0"
       >
         {movies.map((movie, index) => (
-          <div key={movie.id} className="snap-start">
+          <div key={movie.id} className="h-full snap-start">
             <MovieCard
               movie={movie}
               onBuyTickets={onBuyTickets}
               priority={index < 2}
-              className="w-full"
             />
           </div>
         ))}

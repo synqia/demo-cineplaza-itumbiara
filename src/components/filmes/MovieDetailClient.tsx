@@ -51,7 +51,7 @@ export default function MovieDetailClient({ movie }: { movie: Movie }) {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-top"
           />
           <div className="cinema-gradient absolute inset-0" />
         </div>
