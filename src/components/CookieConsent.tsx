@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { isAdminPath } from "@/lib/admin";
 import {
   getStoredConsent,
   COOKIE_CONSENT_STORAGE_KEY,
@@ -37,6 +39,7 @@ function shouldShowBanner(): boolean {
 }
 
 export default function CookieConsent() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -55,7 +58,7 @@ export default function CookieConsent() {
     setVisible(false);
   };
 
-  if (!visible) return null;
+  if (isAdminPath(pathname) || !visible) return null;
 
   return (
     <div
@@ -63,7 +66,7 @@ export default function CookieConsent() {
       aria-label="Preferências de cookies"
       className="fixed bottom-0 left-0 right-0 z-100 border-t border-border-default bg-bg-base p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.3)]"
     >
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-300 flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-text-faint text-sm font-body leading-relaxed">
           Utilizamos cookies para garantir o funcionamento do site e, com sua
           autorização, para melhorar sua experiência (conforme a LGPD). Você

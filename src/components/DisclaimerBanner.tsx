@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { isAdminPath } from "@/lib/admin";
 
 export default function DisclaimerBanner() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(true);
 
-  if (!visible) return null;
+  if (isAdminPath(pathname) || !visible) return null;
 
   return (
     <div

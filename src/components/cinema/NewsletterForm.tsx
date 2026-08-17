@@ -39,7 +39,7 @@ export default function NewsletterForm() {
               Receba estreias, sessões especiais e promoções
             </h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              Cadastro demonstrativo — nenhum e-mail é enviado neste protótipo.
+              Cadastro demonstrativo, nenhum e-mail é enviado neste protótipo.
             </p>
           </div>
           <form

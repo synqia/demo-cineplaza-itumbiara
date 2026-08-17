@@ -69,8 +69,8 @@
   --card-foreground: #f8fafc;
   --popover: #101827;
   --popover-foreground: #f8fafc;
-  --primary: #f04452;
-  --primary-hover: #ff5965;
+  --primary: #f62028;
+  --primary-hover: #ff3a43;
   --primary-foreground: #ffffff;
   --secondary: #182235;
   --secondary-foreground: #f8fafc;
@@ -81,16 +81,16 @@
   --destructive: #ef4444;
   --border: rgba(248, 250, 252, 0.12);
   --input: rgba(248, 250, 252, 0.14);
-  --ring: #f04452;
-  --radius: 0.75rem;
+  --ring: #f62028;
+  --radius: 0.5rem;
   --sidebar: #101827;
   --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #f04452;
+  --sidebar-primary: #f62028;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #182235;
   --sidebar-accent-foreground: #f8fafc;
   --sidebar-border: rgba(248, 250, 252, 0.12);
-  --sidebar-ring: #f04452;
+  --sidebar-ring: #f62028;
 }
 
 @layer base {
@@ -241,4 +241,21 @@
 }
 .stagger-4 {
   animation-delay: 240ms;
+}
+
+.admin-app {
+  font-size: 14px;
+}
+
+html:has(.admin-app),
+html:has(.admin-app) body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.admin-app h1,
+.admin-app h2,
+.admin-app h3,
+.admin-app h4 {
+  letter-spacing: 0;
 }
